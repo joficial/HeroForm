@@ -27,6 +27,6 @@ export class HeroFormComponent {
   onSubmit(){ this.submitted=true; }
 
   //TODO: remove this when we're done
-  get dignostic() { return JSON.stringify(this.model); }
+  get diagnostic() { return JSON.stringify(this.model); }
 
 }

@@ -1,13 +1,30 @@
 <section name="HeroForm" class="container">
   <h1>Hero Form</h1>
-  <form>
+  <p>{{ diagnostic }}</p>
+  <form #heroForm="ngForm">
+    <!-- Nome do Herói -->
     <section class="form-group">
-      <input type="text" class="form-control" id="name" placeholder="Nome do Herói" required>
-    </section>
-    <section class="form-group">
-      <input type="text" class="form-control" id="alterEgo" placeholder="Alter Ego" required>
+        <label for="name">Nome do Herói:</label>
+      <input type="text" class="form-control" id="name" required
+        [(ngModel)]="model.name" name="name">
     </section>
 
-    <button type="submit" class="btn btn-success">Cadastrar</button>
+    <!-- Alter Ego -->
+    <section class="form-group">
+        <label for="alterEgo">Alter Ego:</label>
+      <input type="text" class="form-control" id="alterEgo"
+        [(ngModel)]="model.alterEgo" name="alterEgo">
+    </section>
+
+    <!-- Super Poder -->
+    <section class="form-group">
+      <label for="heroPower">Poder do Herói:</label>
+      <select id="heroPower" class="form-control" required
+        [(ngModel)]="model.power" name="power">
+        <option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
+      </select>
+    </section>
+
+    <button type="submit" class="btn btn-outline-success btn-block">Cadastrar</button>
   </form>
 </section>
